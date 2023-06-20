@@ -1,0 +1,48 @@
+<ng-template #loading>
+  <div class="alert alert-info text-center">
+    Si us plau, espere-ho
+  </div>
+</ng-template>
+
+
+<div *ngIf="country; else loading">
+  <div class="row">
+    <div class="col-12">
+      <h2> País: <strong> {{ country.name.common }} </strong></h2>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <h3>Bandera</h3>
+      <img [src]="country.flags.svg" [alt]="country.name.common" class="img-thumbnail">
+    </div>
+    <div class="col">
+      <h2>Informació bàsica</h2>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <strong>Població: </strong> {{ country.population | number }}
+        </li>
+        <li class="list-group-item">
+          <strong>Codi: </strong> {{ country.cca3 }}
+        </li>
+        <li class="list-group-item">
+          <strong>Nom oficial: </strong> {{ country.name.official }}
+        </li>
+        <li class="list-group-item">
+          <strong> Capital: </strong> {{ country.capital }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col">
+      <h3>Traducció</h3>
+      <div class="d-flex flex-wrap">
+        <span  *ngFor="let translation of translations" class="badge bg-primary m-1">
+          {{ translation.official}}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
