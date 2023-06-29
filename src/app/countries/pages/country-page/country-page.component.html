@@ -32,6 +32,9 @@
         <li class="list-group-item">
           <strong> Capital: </strong> {{ country.capital }}
         </li>
+        <li class="list-group-item">
+          <strong> Regió: </strong> {{ country.region }}
+        </li>
       </ul>
     </div>
   </div>
@@ -40,7 +43,7 @@
       <h3>Traducció</h3>
       <div class="d-flex flex-wrap">
         <span  *ngFor="let translation of translations" class="badge bg-primary m-1">
-          {{ translation.official}}
+          {{ translation.official }}
         </span>
       </div>
     </div>
